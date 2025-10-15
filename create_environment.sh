@@ -6,15 +6,15 @@ keza_dir="submissions_reminder_$yourname"
 mkdir -p $keza_dir
 
 #create subdirectories inside parent directory
-mkdir -p "$keza_dir/app"
-mkdir -p "$keza_dir/modules"
-mkdir -p "$keza_dir/assets"
-mkdir -p "$keza_dir/config"
+mkdir -p $keza_dir/app
+mkdir -p $keza_dir/modules
+mkdir -p $keza_dir/assets
+mkdir -p $keza_dir/config
 
 #create files inside the subdirectories
 
 #create a submissions.txt file
-echo "student, assignment, submission status
+echo 'student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
 Divine, Shell Navigation, not submitted
@@ -23,12 +23,12 @@ Wilson, Shell Basics, submitted
 Louis, Shell Navigation, not submitted
 Hervine, Git, submitted
 Issac, Shell Navigation, not submitted
-KayKay, Git, submitted" > $keza_dir/assets/submissions.txt
+KayKay, Git, submitted' > $keza_dir/assets/submissions.txt
 
 #create a config file
 echo '# This is the config file
-ASSIGNMENT= "Shell Navigation"
-DAYS_REMAINING=2' > $keza_dir/config/config.txt
+ASSIGNMENT="Shell Navigation"
+DAYS_REMAINING=2' > $keza_dir/config/config.env
 
 #create modules/reminder.sh file
 
@@ -70,3 +70,16 @@ echo "Days remaining to submit: $DAYS_REMAINING days"
 echo "--------------------------------------------"
 
 check_submissions $submissions_file' > $keza_dir/app/reminder.sh
+
+#checking if reminder.sh exist
+echo '
+if [ -f "./app/reminder.sh" ]; then
+  ./app/reminder.sh
+else
+    echo "Error: reminder.sh not found in app/ directory"
+exit 1
+fi' > $keza_dir/startup.sh
+#make the scripts executable
+chmod +x $keza_dir/app/reminder.sh
+chmod +x $keza_dir/modules/functions.sh
+chmod +x $keza_dir/startup.sh
