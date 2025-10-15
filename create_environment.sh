@@ -10,4 +10,3 @@ mkdir -p "$parent_dir/app"
 mkdir -p "$parent_dir/modules"
 mkdir -p "$parent_dir/assets"
 mkdir -p "$parent_dir/config"
-
