@@ -7,4 +7,4 @@ Wilson, Shell Basics, submitted
 Louis, Shell Navigation, not submitted
 Hervine, Git, submitted
 Issac, Shell Navigation, not submitted
-KayKay, Git, submitted 
+KayKay, Git, submitted
