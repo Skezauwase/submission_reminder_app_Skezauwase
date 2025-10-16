@@ -2,7 +2,7 @@
 #creates an app reminder for students to remind them pending submissions
 #ask for user input and create a directory submissions_reminder_{userinput}
 read -p "Enter your name: " yourname
-keza_dir="submissions_reminder_$yourname"
+keza_dir="submission_reminder_$yourname"
 mkdir -p $keza_dir
 
 #create subdirectories inside parent directory
